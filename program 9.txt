@@ -34,3 +34,14 @@ E6                   Sidharth             Assistant            m                
 E12                  Salman               Manager              m                  43      33000 12-SEP-17 P2                   Kannur
 E11                  Philip               Manager              m                  24      30000 12-SEP-17 P2                   Kannur
 
+10)details of employee working in cse
+select * from employee2 where pno in(select pno from project where deptno in(select deptno from department where deptname = 'CSE'))order by en
+ame;
+
+ENO                  ENAME                DESIGNATION          GENDER            AGE     SALARY DATEOFJOI PNO                  CITY
+-------------------- -------------------- -------------------- ---------- ---------- ---------- --------- -------------------- --------------------
+E2                   Akshay               Developer            m                  20      72000 12-JUL-16 P1                   Kundara
+E1                   Alan                 Developer            m                  20      72000 12-JUN-12 P1                   Kundara
+E11                  Philip               Manager              m                  24      30000 12-SEP-17 P2                   Kannur
+E12                  Salman               Manager              m                  43      33000 12-SEP-17 P2                   Kannur
+E6                   Sidharth             Assistant            m                  20      84000 12-DEC-17 P2                   tvm
