@@ -21,3 +21,16 @@ query : update Employee2 set Designation='Senior manager' where to_char(dateofjo
 
 8)update salary of senior most employee
 query : update employee2 set salary = salary + 0.1*salary where age in(select max(age) from Employee2);
+
+9)details of employee working in project in which arun is not working
+query : 
+ select * from employee2 where pno not in (select pno from employee2 where ename='Amal');
+
+ENO                  ENAME                DESIGNATION          GENDER            AGE     SALARY DATEOFJOI PNO                  CITY
+-------------------- -------------------- -------------------- ---------- ---------- ---------- --------- -------------------- --------------------
+E1                   Alan                 Developer            m                  20      72000 12-JUN-12 P1                   Kundara
+E2                   Akshay               Developer            m                  20      72000 12-JUL-16 P1                   Kundara
+E6                   Sidharth             Assistant            m                  20      84000 12-DEC-17 P2                   tvm
+E12                  Salman               Manager              m                  43      33000 12-SEP-17 P2                   Kannur
+E11                  Philip               Manager              m                  24      30000 12-SEP-17 P2                   Kannur
+
