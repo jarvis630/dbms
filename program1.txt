@@ -1,0 +1,17 @@
+1)Number of employee working in project where Praveen and aruna is not working
+query : select PNO,count(*) from Employee2 where Pno in(select Pno from Employee2 where Ename not in ('Alan','Salman')) group by Pno;
+
+2)salary greater than average salary
+query : select count(eno) from employee2 where salary > (select avg(salary) from employee2);
+
+3)project details of employee with maximum salary
+query : select * from Project where Pno in(select Pno from Employee2 where salary in(Select max(salary) from Employee2));
+
+4)department with youngest employee
+query : select DEPTNAME from Department where DEPTNO in (select DEPTNO from Project where Pno in (select Pno from Employee2 where Age in (select min(age)from employee2)));
+
+5)joined in month of january
+query : select * from employee2 where eno in (select eno from employee2 where to_char(dateofjoin,'mm')='01');
+
+6)month and count of employee joined in each month
+query :
