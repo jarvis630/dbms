@@ -18,3 +18,6 @@ query : select to_char(dateofjoin,'mm') as Month,count(*) from Employee2 Group B
 
 7)update details of employee who joined in month of march and salry greater than average salary
 query : update Employee2 set Designation='Senior manager' where to_char(dateofjoin,'mm') = '03' and salary > (select avg(salary) from employee2);
+
+8)update salary of senior most employee
+query : update employee2 set salary = salary + 0.1*salary where age in(select max(age) from Employee2);
