@@ -15,3 +15,6 @@ query : select * from employee2 where eno in (select eno from employee2 where to
 
 6)month and count of employee joined in each month
 query : select to_char(dateofjoin,'mm') as Month,count(*) from Employee2 Group By to_char(dateofjoin,'mm');
+
+7)update details of employee who joined in month of march and salry greater than average salary
+query : update Employee2 set Designation='Senior manager' where to_char(dateofjoin,'mm') = '03' and salary > (select avg(salary) from employee2);
